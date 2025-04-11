@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add Student</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Student</h1>
+        <form action="{{ url_for('add_customer') }}" method="POST">
+            
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{customer[1]}}" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="{{customer[2]}}" required>
+    
+    <label for="Contact_Number">Contact_Number:</label>
+    <input type="text" id="Contact_Number" name="Contact_Number" value="{{customer[3]}}" required>
+
+    <label for="Section" >Choose Your Section:</label>
+
+    <select name="Section" id="Section" >
+        <option value="'A' Section">'A' Section</option>
+        <option value="'B' Section">'B' Section</option>
+
+     </select>
+    
+
+    <label for="College">College: </label>
+    <input type="text" id="College" name="College" value="{{customer[4]}}" required>
+
+            
+            <button type="submit">Add Customer</button>
+        </form>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>
